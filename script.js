@@ -1,7 +1,7 @@
 let nextBtn = document.querySelector('.next-btn');
 let prevBtn = document.querySelector('.prev-btn');
 let slides = document.querySelectorAll('.slide');
-let numberOfSlides = slides.lenght;
+let numberOfSlides = slides.length;
 let slideNumber = 0;
 
 //next
