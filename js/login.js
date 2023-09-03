@@ -1,3 +1,4 @@
+"use strict";
 //#region Changing login/registration page
 let wrapper = document.querySelector('.wrapper');
 let loginLink = document.querySelector('.login-link');
