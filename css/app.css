@@ -1,4 +1,4 @@
-.header {
+.up-header {
     position: fixed;
     top: 0;
     left: 0;
@@ -23,11 +23,11 @@
     height: 100%;
     border: 1px solid whitesmoke;
     border-radius: 1rem;
-    transition: 0.5s;
+    transition: 2s;
 }
 
 .logo img:hover {
-    border: 2px solid whitesmoke;
+    backdrop-filter: blur(10px);
 }
 
 .navigation {
@@ -67,6 +67,9 @@
 }
 
 .login-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     font-family: 'Poppins', sans-serif;
     font-size: medium;
     font-weight: 500;
@@ -76,6 +79,7 @@
     background: transparent;
     border: 1px solid whitesmoke;
     color: whitesmoke;
+    cursor: pointer;
     transition: 0.5s;
 }
 
@@ -91,13 +95,13 @@
     overflow: hidden;
 }
 
-.slider .slide {
+.slider .coverSlide {
     position: absolute;
     width: 100%;
     height: 100%;
 }
 
-.slide img {
+.coverSlide img {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -107,11 +111,11 @@
     transition: .3s ease;
 }
 
-.slide.active img {
+.coverSlide.active img {
     opacity: 1;
 }
 
-.slide .left-info {
+.coverSlide .left-info {
     position: absolute;
     top: 0;
     left: 0;
@@ -121,7 +125,7 @@
     transition: 0s;
 }
 
-.slide.active .left-info {
+.coverSlide.active .left-info {
     transform: translateX(0);
     z-index: 1;
     transition: .5s ease;
@@ -182,7 +186,7 @@
     color: #444;
 }
 
-.slide .right-info {
+.coverSlide .right-info {
     position: absolute;
     top: 0;
     right: 0;
@@ -194,7 +198,7 @@
     transition: 0s;
 }
 
-.slide.active .right-info {
+.coverSlide.active .right-info {
     transform: translateX(0);
     z-index: 1;
     transition: .5s ease;
@@ -219,7 +223,7 @@
     position: absolute;
     bottom: 8%;
     right: 3%;
-    z-index: 99;
+    z-index: 2;
 }
 
 .slider-nav span {
@@ -241,4 +245,361 @@
 .slider-nav span:hover {
     background: whitesmoke;
     color: #444;
+}
+
+
+/* cookie */
+
+.cookie-wrapper {
+    position: absolute;
+    z-index: 3;
+    right: 0.1px;
+    bottom: 50px;
+    max-width: 450px;
+    width: 100%;
+    padding: 5px 10px;
+    background: #444;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    transition: right 1s ease;
+}
+
+.cookie-wrapper.show {
+    right: 200px;
+}
+
+.cookie-wrapper.inActive {
+    display: none;
+}
+
+.cookie-data {
+    color: whitesmoke;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.8rem;
+}
+
+.cookie-data i {
+    color: coral;
+    font-size: large;
+    margin-bottom: 10px;
+}
+
+.cookie-data p a {
+    color: coral;
+}
+
+.cookie-buttons {
+    display: flex;
+    flex-direction: row;
+    margin-top: 10px;
+    justify-content: space-evenly;
+}
+
+.cookie-buttons .button {
+    border: 1px solid coral;
+    border-radius: 6px;
+    background-color: coral;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 800;
+    padding: 0.5rem;
+    transition: .5s;
+    cursor: pointer;
+}
+
+.cookie-buttons .button:hover {
+    background-color: #444;
+    color: coral;
+}
+
+/* LOGIN PAGE*/
+
+.login-body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-image: url(../images/main.page/1\ \(20\).jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.wrapper {
+    position: relative;
+    width: 400px;
+    height: 440px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border-radius: 30px;
+    border: 2px solid rgba(255, 255, 255, .5);
+    backdrop-filter: blur(5px);
+    box-shadow: 0 0 30px rgba(0, 0, 0, .5);
+    transition: height .2s ease;
+    overflow: hidden;
+}
+
+.wrapper.active {
+    height: 550px;
+}
+
+.wrapper .form-box {
+    width: 100%;
+    padding: 40px;
+}
+
+.wrapper .form-box.login {
+    transition: transform .18s ease;
+    transform: translateX(0);
+}
+
+.wrapper.active .form-box.login {
+    transition: none;
+    transform: translateX(-400px);
+}
+
+
+.wrapper .form-box.register {
+    position: absolute;
+    transform: translateX(400px);
+    transition: none;
+}
+
+.wrapper.active .form-box.register {
+    transition: transform .18s ease;
+    transform: translateX(0);
+}
+
+.form-box h2 {
+    font-size: 2rem;
+    color: rgba(255, 255, 255, .8);
+    text-align: center;
+}
+
+.input-box {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    border-bottom: 2px solid rgba(255, 255, 255, .5);
+    margin: 30px 0;
+}
+
+.input-box label {
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    font-size: 1rem;
+    color: rgba(255, 255, 255, .5);
+    font-weight: 500;
+    pointer-events: none;
+    transition: .5s;
+}
+
+.input-box input:focus~label,
+.input-box input:valid~label {
+    top: -5px;
+}
+
+.input-box input {
+    width: 100%;
+    height: 100%;
+    font-size: 1rem;
+    font-weight: 600;
+    color: rgba(255, 255, 255, .5);
+    padding: 0 35px 0 5px;
+    background: transparent;
+    border: none;
+    outline: none;
+}
+
+.input-box .icon {
+    position: absolute;
+    right: 8px;
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, .5);
+    line-height: 60px;
+}
+
+.input-box p {
+    font-family: 'Poppins', sans-serif;
+    margin-top: 3px;
+}
+
+.remember-forgot {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, .5);
+    font-weight: 500;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.remember-forgot label input {
+    accent-color: rgba(255, 255, 255, .5);
+}
+
+.remember-forgot a {
+    color: rgba(255, 255, 255, .8);
+}
+
+.remember-forgot a:hover {
+    color: white;
+}
+
+.reg-log-btn {
+    width: 100%;
+    height: 50px;
+    border: none;
+    outline: none;
+    border-radius: 8px;
+    color: #444;
+    background: rgba(255, 255, 255, .8);
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.reg-log-btn:hover {
+    color: rgba(255, 255, 255, .5);
+    background-color: #444;
+}
+
+.login-register {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, .5);
+    text-align: center;
+    font-weight: 500;
+    margin: 30px 0 30px 0;
+}
+
+.login-register p a {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, .8);
+    font-weight: 600;
+}
+
+.login-register p a:hover {
+    color: white;
+}
+
+/* HOME PAGE */
+.cover-section {
+    background-image: url(../images/main.page/1\ \(8\).jpg);
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+}
+
+/* Section One*/
+
+.section-one {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    max-width: 100%;
+    -webkit-box-pack: space-evenly;
+    -ms-flex-pack: space-evenly;
+    justify-content: space-evenly;
+    background-color: #444;
+    padding: 6.25rem 0;
+}
+
+.sec-one-block {
+    max-width: 250px;
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.sec-one-block i {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    font-size: 32px;
+    color: snow;
+}
+
+.sec-one-block span {
+    font-family: 'Poppins', sans-serif;
+    font-size: 3rem;
+    color: snow;
+    margin: 2rem 0;
+}
+
+.sec-one-block p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.5rem;
+    color: snow;
+}
+
+/* Section About Us*/
+
+.section-about-us {
+    background-image: url(../images/main.page/1\ \(4\).jpg);
+    position: relative;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 50vh;
+    padding: 200px 0px;
+}
+
+.section-about-us-ovarley {
+    background-color: #444;
+    opacity: 0.4;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    position: absolute;
+}
+
+.section-about-us h2 {
+    padding: 4rem 0;
+    text-align: center;
+    position: relative;
+    color: snow;
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: 1rem;
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 1.5em;
+}
+
+/*Section About Us Description*/
+
+.section-about-us-descr {
+    padding: 4rem 6rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    row-gap: 40px;
+    background-color: #444;
+}
+
+.section-about-us-descr p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    color: snow;
 }
