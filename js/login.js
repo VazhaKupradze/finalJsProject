@@ -1,8 +1,9 @@
+//#region Changing login/registration page
 let wrapper = document.querySelector('.wrapper');
 let loginLink = document.querySelector('.login-link');
 let registerLink = document.querySelector('.register-link');
 
-//#region Changing login/registration page
+
 registerLink.addEventListener('click', () => {
     wrapper.classList.add('active');
 });
@@ -11,7 +12,6 @@ loginLink.addEventListener('click', () => {
     wrapper.classList.remove('active');
 });
 //#endregion
-
 
 //#region Validate userName
 
@@ -70,8 +70,6 @@ function validateEmail() {
 
 //#endregion
 
-
-
 //#region Validate Password
 
 
@@ -128,6 +126,23 @@ function validatePassTwo() {
 
 //#endregion
 
+//#region Validate by submit
+
+let registrationForm = document.getElementById("formRegistration");
+
+registrationForm.addEventListener("submit", function () {
+
+    let userNameValid = validateUserName();
+    let emailValid = validateEmail();
+    let passOneValid = validatePassOne();
+    let passTwovalid = validatePassTwo();
+
+    if (!userNameValid || !emailValid || !passOneValid || !passTwovalid) {
+        return;
+    }
+});
+
+//#endregion
 
 //#region Helper Methods
 const hasUpperCase = str => str.match(/[A-Z]/);
