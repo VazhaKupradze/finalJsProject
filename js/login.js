@@ -1,4 +1,8 @@
 "use strict";
+// // let axios = require("axios");
+// import axios from 'axios';
+
+
 //#region Changing login/registration page
 let wrapper = document.querySelector('.wrapper');
 let loginLink = document.querySelector('.login-link');
@@ -22,7 +26,7 @@ userNameField.addEventListener("keyup", validateUserName);
 
 function validateUserName() {
     let userNameError = document.getElementById("error-username")
-    let userNameValue = document.getElementById("userNameId").value;
+    let userNameValue = userNameField.value;
 
     if (userNameValue == "") {
         userNameError.innerText = "Please complete the field";
@@ -50,7 +54,7 @@ emailField.addEventListener("keyup", validateEmail)
 
 function validateEmail() {
     let emailError = document.getElementById("emailError");
-    let emailvalue = document.getElementById("emailId").value;
+    let emailvalue = emailField.value;
     let emailpattern = /^([a-zA-Z0-9._%-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,})$/;
 
     if (emailvalue == "") {
@@ -131,7 +135,8 @@ function validatePassTwo() {
 
 let registrationForm = document.getElementById("formRegistration");
 
-registrationForm.addEventListener("submit", function () {
+registrationForm.addEventListener("submit", function (e) {
+    e.preventDefault();
 
     let userNameValid = validateUserName();
     let emailValid = validateEmail();
@@ -141,6 +146,21 @@ registrationForm.addEventListener("submit", function () {
     if (!userNameValid || !emailValid || !passOneValid || !passTwovalid) {
         return;
     }
+
+    //     axios.post('https://jsonplaceholder.typicode.com/users', {
+    //         userName: userNameField.value,
+    //         email: emailField.value,
+    //         passwordOne: passwordOneField.value,
+
+    //     })
+    //         .then(function (response) {
+    //             console.log(response);
+    //             alert("Succes")
+    //         })
+    //         .catch(function (response) {
+    //             console.log(response);
+    //             alert('error!')
+    //         });
 });
 
 //#endregion
