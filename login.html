@@ -26,7 +26,7 @@
         <div class="navigation">
             <nav>
                 <ul class="nav-list">
-                    <a href="#">HOME</a>
+                    <a href="home.html">HOME</a>
                     <a href="#">ABOUT</a>
                     <a href="#">TOURS</a>
                     <a href="#">CONTACT</a>
@@ -39,21 +39,21 @@
 
         <div class="form-box login">
             <h2>Login</h2>
-            <form action="#">
+            <form action="#" id="formLogin">
 
                 <div class="input-box">
                     <span class="icon">
                         <i class="fa-regular fa-envelope"></i>
                     </span>
-                    <input type="email">
+                    <input type="email" id="loginEmail">
                     <label>Email</label>
                 </div>
 
                 <div class="input-box">
                     <span class="icon">
-                        <i class="fa-regular fa-eye-slash"></i>
+                        <i class="fa-regular fa-eye-slash" id="loginIcon"></i>
                     </span>
-                    <input type="password">
+                    <input type="password" id="loginPassword">
                     <label>Password</label>
                 </div>
 
@@ -96,7 +96,7 @@
 
                 <div class="input-box">
                     <span class="icon">
-                        <i class="fa-regular fa-eye-slash"></i>
+                        <i class="fa-regular fa-eye-slash" id="hidenIconOne"></i>
                     </span>
                     <input placeholder="Password" type="password" id="passwordId" required>
                     <p class="error-text" id="error-passw"></p>
@@ -104,16 +104,15 @@
 
                 <div class="input-box">
                     <span class="icon">
-                        <i class="fa-regular fa-eye-slash"></i>
+                        <i class="fa-regular fa-eye-slash" id="hiddenIconTwo"></i>
                     </span>
                     <input placeholder="Confirm Password" type="password" id="passwordTwoId" required>
                     <p class="error-text" id="error-passw-two"></p>
                 </div>
 
                 <div class="remember-forgot">
-                    <label>
-                        <input type="checkbox">
-                        <p class="error-text" id="error-checkbox"></p>
+                    <label id="errorCheck">
+                        <input type="checkbox" id="error-checkbox">
                         agree to the terms & conditions
                     </label>
                 </div>
@@ -132,8 +131,9 @@
         </div>
 
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js" type="module"></script>
+
     <script src="js/login.js" type="module"></script>
+    <script src="js/main.js"></script>
 </body>
 
 </html>

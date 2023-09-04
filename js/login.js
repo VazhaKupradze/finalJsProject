@@ -1,6 +1,6 @@
 "use strict";
-// // let axios = require("axios");
-// import axios from 'axios';
+
+import axios from "https://cdn.jsdelivr.net/npm/axios@1.3.5/+esm";
 
 
 //#region Changing login/registration page
@@ -17,6 +17,7 @@ loginLink.addEventListener('click', () => {
     wrapper.classList.remove('active');
 });
 //#endregion
+
 
 //#region Validate userName
 
@@ -45,6 +46,7 @@ function validateUserName() {
     return true;
 }
 //#endregion
+
 
 //#region Validate email with regex
 
@@ -75,8 +77,8 @@ function validateEmail() {
 
 //#endregion
 
-//#region Validate Password
 
+//#region Validate Password
 
 let passwordOneField = document.getElementById("passwordId");
 let passwordTwoField = document.getElementById("passwordTwoId");
@@ -112,7 +114,6 @@ function validatePassOne() {
     return true;
 };
 
-
 passwordTwoField.addEventListener("keyup", validatePassTwo)
 function validatePassTwo() {
     let passwordTwoError = document.getElementById("error-passw-two")
@@ -131,9 +132,37 @@ function validatePassTwo() {
 
 //#endregion
 
+
+//#region show hidden password
+
+togglePasswordType(document.getElementById("passwordId"), document.getElementById("hidenIconOne"));
+togglePasswordType(document.getElementById("passwordTwoId"), document.getElementById("hiddenIconTwo"));
+togglePasswordType(document.getElementById("loginPassword"), document.getElementById("loginIcon"));
+
+function togglePasswordType(passwordField, iconField) {
+    console.log(iconField)
+    iconField.addEventListener("click", function () {
+        if (passwordField.type == "password") {
+            passwordField.setAttribute("type", "text");
+            iconField.classList.remove("fa-eye-slash");
+            iconField.classList.add("fa-eye")
+        }
+        else {
+            passwordField.setAttribute("type", "password");
+            iconField.classList.remove("fa-eye");
+            iconField.classList.add("fa-eye-slash")
+        }
+    });
+}
+
+//#endregion
+
+
 //#region Validate by submit
 
 let registrationForm = document.getElementById("formRegistration");
+let checkBoxReg = document.getElementById("error-checkbox");
+let checkBoxError = document.getElementById("errorCheck");
 
 registrationForm.addEventListener("submit", function (e) {
     e.preventDefault();
@@ -143,30 +172,56 @@ registrationForm.addEventListener("submit", function (e) {
     let passOneValid = validatePassOne();
     let passTwovalid = validatePassTwo();
 
+    if (checkBoxReg.checked !== true) {
+        checkBoxError.style.color = 'coral';
+    }
     if (!userNameValid || !emailValid || !passOneValid || !passTwovalid) {
         return;
     }
+    axios.post('https://jsonplaceholder.typicode.com/users', {
+        userName: userNameField.value,
+        email: emailField.value,
+        passwordOne: passwordOneField.value,
 
-    //     axios.post('https://jsonplaceholder.typicode.com/users', {
-    //         userName: userNameField.value,
-    //         email: emailField.value,
-    //         passwordOne: passwordOneField.value,
-
-    //     })
-    //         .then(function (response) {
-    //             console.log(response);
-    //             alert("Succes")
-    //         })
-    //         .catch(function (response) {
-    //             console.log(response);
-    //             alert('error!')
-    //         });
+    })
+        .then(function (response) {
+            console.log(response);
+            alert("Succes")
+        })
+        .catch(function (response) {
+            console.log(response);
+            alert('error!')
+        });
 });
 
 //#endregion
+
+
+//#region login handler 
+
+let emailLogin = document.getElementById("loginEmail");
+
+let loginForm = document.getElementById("formLogin")
+
+loginForm.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    axios.get('https://jsonplaceholder.typicode.com/users?email=' + emailLogin)
+
+        .then(function (response) {
+            console.log(response);
+            alert("Succes")
+        })
+        .catch(function (response) {
+            console.log(response);
+            alert("error!")
+        })
+});
+
+//#endregion
+
 
 //#region Helper Methods
 const hasUpperCase = str => str.match(/[A-Z]/);
 const hasLowerCase = str => str.match(/[a-z]/);
 //#endregion
-
