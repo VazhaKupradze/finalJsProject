@@ -3,13 +3,13 @@
 
 document.querySelectorAll(".scrollDown").forEach(function (scrollToPage) {
   scrollToPage.addEventListener("click", function (e) {
-    let href = location.href;
-    if (href.indexOf("index.html") !== -1) {
+    if (location.href.indexOf("index.html") !== -1) {
       e.preventDefault();
+      let href = e.target.href;
       if (href.indexOf("#") === -1)
         return;
 
-      const elementId = location.href.split("#")[1];
+      const elementId = href.split("#")[1];
       scrollToElement(elementId);
     }
   });
@@ -51,5 +51,3 @@ window.addEventListener("load", function () {
     scrollToElement(elementId);
   }
 });
-
-
