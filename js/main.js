@@ -3,17 +3,30 @@
 
 document.querySelectorAll(".scrollDown").forEach(function (scrollToPage) {
   scrollToPage.addEventListener("click", function (e) {
-    e.preventDefault();
-    let href = e.target.getAttribute("href").substring(1);
-    console.log(href);
-    let offsetTop = document.getElementById(href).offsetTop;
+    let href = location.href;
+    if (href.indexOf("index.html") !== -1) {
+      e.preventDefault();
+      if (href.indexOf("#") === -1)
+        return;
 
-    scroll({
-      top: offsetTop,
-      behavior: "smooth"
-    });
+      const elementId = location.href.split("#")[1];
+      scrollToElement(elementId);
+    }
   });
 });
+
+function scrollToElement(elementId) {
+  let element = document.getElementById(elementId);
+  if (!element)
+    return;
+
+  let offsetTop = element.offsetTop;
+
+  scroll({
+    top: offsetTop,
+    behavior: "smooth"
+  });
+}
 
 let scrollToTop = document.querySelector(".chevron-to-top");
 
@@ -32,5 +45,11 @@ scrollToTop.addEventListener("click", function () {
   })
 });
 
+window.addEventListener("load", function () {
+  if (location.href.indexOf("#") !== -1) {
+    const elementId = location.href.split("#")[1];
+    scrollToElement(elementId);
+  }
+});
 
 
