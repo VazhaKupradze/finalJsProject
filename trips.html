@@ -20,10 +20,13 @@
 
 <body class="trips-body">
     <header class="up-header">
+        <div class="burger-bar" id="burgerBar">
+            <i class="fa-solid fa-bars" id="icon"></i>
+        </div>
         <a class="logo" href="index.html">
             <img src="images/logo.webp" alt="logo">
         </a>
-        <div class="navigation">
+        <div class="navigation" id="navBar">
             <nav>
                 <ul class="nav-list">
                     <a href="index.html">HOME</a>
@@ -37,30 +40,47 @@
     </header>
     <main>
         <section>
+            <div class="trip-buttons-wrapper">
+                <div class="chevron-bar" id="chevronBar">
+                    <i class="fa-solid fa-circle-chevron-down" id="chevron-icon"></i>
+                </div>
 
-            <div>
-                <ul class="trips-ul">
-                    <li><a href="#all" class="trips-navs">All</a></li>
-                    <li><a href="#spring" class="trips-navs">Spring</a></li>
-                    <li><a href="#summer" class="trips-navs">Summer</a></li>
-                    <li><a href="#autumn" class="trips-navs">Autumn</a></li>
-                    <li><a href="#winter" class="trips-navs">Winter</a></li>
-                </ul>
+
+                <div class="trips-header" id="tripBar">
+                    <ul class="trips-ul">
+                        <li><a href="#all" class="trips-navs">All</a></li>
+                        <li><a href="#spring" class="trips-navs">Spring</a></li>
+                        <li><a href="#summer" class="trips-navs">Summer</a></li>
+                        <li><a href="#autumn" class="trips-navs">Autumn</a></li>
+                        <li><a href="#winter" class="trips-navs">Winter</a></li>
+                    </ul>
+                </div>
             </div>
-
             <div class="trips-list-conteiner">
-                <div class="trips-list show spring"></div>
-                <div class="trips-list show spring"></div>
-                <div class="trips-list show winter"></div>
-                <div class="trips-list show spring"></div>
-                <div class="trips-list show summer"></div>
-                <div class="trips-list show spring"></div>
-                <div class="trips-list show autumn"></div>
-                <div class="trips-list show autumn"></div>
-                <div class="trips-list show summer"></div>
-                <div class="trips-list show summer"></div>/
-            </div>
-        </section>
+
+                <div style="background-image:url(images/spring/aroundGeo2022/1\ \(21\).jpg)"
+                    class="trips-list  show spring"></div>
+                <div style="background-image:url(images/spring/sioni2021/1\ \(1\).jpg)" class="trips-list  show spring">
+                </div>
+                <div style="background-image:url(images/spring/supsa2023/1\ \(2\).jpg)" class="trips-list  show spring">
+                </div>
+                <div style="background-image:url(images/summer/kakhisi2023/1\ \(9\).jpg)"
+                    class="trips-list  show summer"></div>
+                <div style="background-image:url(images/summer/ratcha2023/1\ \(6\).jpg)"
+                    class="trips-list  show summer"></div>
+                <div style="background-image:url(images/summer/tianeti2021/1\ \(12\).jpg)"
+                    class="trips-list  show summer"></div>/
+                <div style="background-image:url(images/autumn/gombori2021/1\ \(12\).jpg)"
+                    class="trips-list  show autumn"></div>
+                <div style="background-image:url(images/autumn/kakhisi2022/1\ \(24\).jpg)"
+                    class="trips-list  show autumn"></div>
+                <div style="background-image:url(images/winter/foka2021/1\ \(7\).jpg)" class="trips-list  show winter">
+                </div>
+
+                <div class="chevron-to-top">
+                    <i class="fa-solid fa-chevron-up"></i>
+                </div>
     </main>
-    <script src="/js/trips.js"></script>
+    <script src="js/trips.js"></script>
+    <script src="js/index.js"></script>
 </body>

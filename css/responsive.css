@@ -1,0 +1,262 @@
+@media (max-width: 1024px) {
+    /* indec.html */
+    .nav-list {
+        justify-content: center;
+    }
+
+    .cover-section h2 {
+        font-size: 110px;
+    }
+
+    /* tour page */
+    .penetrate-blur h1 {
+        font-size: 160px;
+    }
+
+    .content h3 {
+        font-size: 1.5rem;
+    }
+
+    .content p {
+        font-size: 0.8rem;
+    }
+
+
+    .right-info h1 {
+        font-size: 160px;
+    }
+
+    .right-info h3 {
+        font-size: 40px;
+    }
+
+}
+
+@media (max-width: 768px) {
+
+
+    .cookie-wrapper.show {
+        right: 8px;
+    }
+
+
+
+    .up-header {
+        padding: 0.5rem 0.5rem;
+    }
+
+    .logo {
+        display: none;
+    }
+
+    .sec-one-block p {
+        display: flex;
+        align-items: center;
+        text-align: center;
+    }
+
+    /* tour page */
+    .penetrate-blur h1 {
+        font-size: 100px;
+    }
+
+    .content h3 {
+        font-size: 1rem;
+    }
+
+    .content p {
+        font-size: 0.7rem;
+    }
+
+
+    .right-info h1 {
+        font-size: 100px;
+    }
+
+    .right-info h3 {
+        font-size: 2rem;
+    }
+
+
+
+}
+
+@media (max-width: 480px) {
+
+
+
+    .cookie-wrapper.show {
+        right: 0px;
+    }
+
+
+    .burger-bar {
+        display: block;
+    }
+
+    .navigation {
+        display: none;
+    }
+
+    .navigation.navActive {
+        display: block;
+
+    }
+
+
+
+
+    .up-header.headerActive {
+        flex-direction: column;
+        align-items: start;
+        padding: 0.5rem 1rem;
+        background-image: linear-gradient(#1D2021, #444);
+    }
+
+    .nav-list {
+        flex-direction: column;
+        width: 140px;
+        row-gap: 1rem;
+    }
+
+    .nav-list a {
+        margin-left: 0;
+        margin-bottom: 5px;
+    }
+
+    .login-btn {
+        width: 100px;
+        height: 40px;
+        margin-top: 5px;
+    }
+
+    .cover-section h2 {
+        font-size: 90px;
+    }
+
+    .sec-one-block i {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 36px;
+        color: snow;
+    }
+
+    .sec-one-block span {
+        font-size: 1.5rem;
+        margin: 1rem 0;
+    }
+
+    .sec-one-block p {
+        display: flex;
+        align-items: center;
+        text-align: center;
+        font-size: 0.9rem;
+    }
+
+    .section-block-cont {
+        flex-direction: column;
+    }
+
+    .section-contact-header {
+        padding: 0.5rem 0;
+        letter-spacing: 1rem;
+        font-size: 20px;
+        font-weight: 300;
+        line-height: 1rem;
+    }
+
+    .contact-block-one {
+        border-top-left-radius: 0px;
+        border-top-right-radius: 50px;
+        border-bottom-left-radius: 50px;
+    }
+
+    .contact-block-one h2 {
+        margin: 0.4rem;
+        letter-spacing: 0.5rem;
+        font-size: 12px;
+    }
+
+    .contact-block-list a {
+        letter-spacing: 1px;
+        font-size: 0.8rem;
+        margin: 0.1rem;
+    }
+
+    .contact-block-two {
+
+        border-bottom-right-radius: 50px;
+        border-top-left-radius: 50px;
+        border-top-right-radius: 0px;
+        border-bottom-left-radius: 0px;
+
+    }
+
+    .contact-block-two h2 {
+        margin: 0.4rem;
+        letter-spacing: 0.5rem;
+        font-size: 12px;
+    }
+
+
+    .form-wraper label {
+        letter-spacing: 1px;
+        font-size: 0.8rem;
+        margin: 0.1rem;
+        margin-top: 0.9rem;
+    }
+
+    /* tour page */
+    .penetrate-blur h1 {
+        font-size: 70px;
+    }
+
+    .content h3 {
+        font-size: 1rem;
+    }
+
+    .content p {
+        font-size: 0.7rem;
+    }
+
+
+    .right-info h1 {
+        font-size: 70px;
+    }
+
+    .right-info h3 {
+        font-size: 1.5rem;
+    }
+
+    .content .btn {
+        padding: 0.8rem 1rem;
+        font-size: 0.9rem;
+        color: whitesmoke;
+        font-weight: 600;
+        transition: .5s;
+    }
+
+
+    .slider-nav span {
+        width: 40px;
+        height: 40px;
+    }
+
+    .chevron-bar {
+        display: block;
+    }
+
+    .trips-header {
+        display: none;
+    }
+
+    .trips-header.chevronActive {
+        display: block;
+    }
+
+    .trips-ul {
+        padding: 0 100px;
+        flex-direction: column;
+    }
+}

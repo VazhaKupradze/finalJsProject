@@ -24,10 +24,13 @@
 
     <!-- Header -->
     <header class="up-header">
+        <div class="burger-bar" id="burgerBar">
+            <i class="fa-solid fa-bars" id="icon"></i>
+        </div>
         <a class="logo" href="index.html">
             <img src="images/logo.webp" alt="logo">
         </a>
-        <div class="navigation">
+        <div class="navigation" id="navBar">
             <nav>
                 <ul class="nav-list">
                     <a href="index.html">HOME</a>
@@ -40,12 +43,16 @@
         <a href="login.html" class="login-btn">LOGIN</a>
     </header>
 
+
+
     <main>
         <!-- cover section -->
         <section class="cover-section">
             <h2>Join Our Journey</h2>
             <div class="slide-overlay-bg"></div>
         </section>
+
+
         <!-- status section -->
         <section class="section-one">
             <div class="sec-one-block">
@@ -148,11 +155,28 @@
         <div class="chevron-to-top">
             <i class="fa-solid fa-chevron-up"></i>
         </div>
+
+        <!-- coockie -->
+        <div class="cookie-wrapper inActive">
+
+            <div class="cookie-data">
+                <i class="fa-solid fa-cookie-bite"></i>
+                <p>
+                    We use cookies to make your experience of our websites better. By using and further navigating this
+                    website you accept this. Detailed information about the use of cookies on this website is available
+                    by clicking on <a href="#">more information.</a>
+                </p>
+            </div>
+
+            <div class="cookie-buttons">
+                <button class="button" id="accept">Accept</button>
+                <button class="button">Decline</button>
+            </div>
+        </div>
     </main>
     <footer>
 
     </footer>
 
-    <script src="js/main.js"></script>
-
+    <script src="js/index.js"></script>
 </body>
